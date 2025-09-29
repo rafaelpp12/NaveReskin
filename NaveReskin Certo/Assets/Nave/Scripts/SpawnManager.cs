@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+    using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -64,7 +64,7 @@ public class SpawnManager : MonoBehaviour
     }
     public void SpawnarLados()
     {
-        if (temporizador >= tempoSpawnLados)
+        if (temporizadorLados >= tempoSpawnLados)
         {
             Debug.Log("To chamando isso aqui");
             Instantiate(InimigoLados, new Vector2(9.42f, Random.Range(4.51f, -4.51f)), Quaternion.identity);

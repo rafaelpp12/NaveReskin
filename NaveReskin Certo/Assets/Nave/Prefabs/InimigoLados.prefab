@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -2698459482234484495}
   - component: {fileID: 3521907167029277328}
   - component: {fileID: 7412607711343241484}
-  - component: {fileID: 3788846335569806201}
   - component: {fileID: 5517012090686714096}
   m_Layer: 0
   m_Name: InimigoLados
@@ -199,21 +198,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &3788846335569806201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4095568190778610415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c2cadd20e708eb49b774cb1d8da55ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  corpo: {fileID: 7412607711343241484}
-  velocidadeY: -2
+  m_Constraints: 4
 --- !u!95 &5517012090686714096
 Animator:
   serializedVersion: 7
