@@ -4,6 +4,14 @@ using UnityEngine;
 public class NaveCombate : MonoBehaviour
 {
 
+
+
+    //barra habilidades
+    public int BarraSuprema;
+
+    public GameObject tiroSupremo;
+    public bool inputSupremo;
+
     public GameObject spawnTiros;
     public GameObject tiroNave;
     public float inputTiro;
@@ -33,6 +41,7 @@ public class NaveCombate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inputSupremo = Input.GetKeyDown(KeyCode.E);
         Contador++;
         inputTiro = Input.GetAxis("Jump");
         Atirar();
@@ -43,6 +52,8 @@ public class NaveCombate : MonoBehaviour
 
         ContadorEspecial++;
         inputEspecial = Input.GetKeyDown(KeyCode.Q);
+
+        AtirarSupremo();
 
     }
 
@@ -60,18 +71,27 @@ public class NaveCombate : MonoBehaviour
         while (cadenciaTiro > 0)
         {
             
-            Debug.Log("Tiro especial");
-            GameObject tiroEsp = Instantiate(tiroEspecial, spawnTiros.transform.position, Quaternion.identity);
-            tiroEsp.GetComponent<tiroEspecial>().player = this.gameObject;
 
-            ContadorEspecial = 0;
-            cadenciaTiro--;
+                GameObject tiroEsp = Instantiate(tiroEspecial, spawnTiros.transform.position, Quaternion.identity);
+                tiroEsp.GetComponent<tiroEspecial>().player = this.gameObject;
 
-            yield return new WaitForSeconds(0.2f); 
+                ContadorEspecial = 0;
+                cadenciaTiro--;
+
+                yield return new WaitForSeconds(0.2f);
+            
         }
-
         cadenciaTiro = cadenciaTiroQuantidade;
     }
+
+    public void AtirarSupremo()
+    {
+        if (inputSupremo == true)
+        {
+            GameObject tiro = Instantiate(tiroSupremo, spawnTiros.transform.position, Quaternion.identity);
+        }
+    }
+
 
         
     
@@ -112,6 +132,15 @@ public class NaveCombate : MonoBehaviour
         invencivel = false;
 
     }
+
+    //Barra das habilidades
+    public void AtualizarBarra(int xp)
+    {
+        BarraSuprema = BarraSuprema + xp;
+    }
+
+
+
 
 
 }

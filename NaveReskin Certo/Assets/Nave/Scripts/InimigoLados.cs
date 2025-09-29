@@ -30,8 +30,16 @@ public class InimigoLados : MonoBehaviour
                 Destroy(gameObject);
             }
 
-
         }
+
+        if (collision.gameObject.CompareTag("Parede"))
+        {
+            Debug.Log("Colidiu com a Parede!");
+            Destroy(gameObject);
+        }
+
+
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,6 +49,7 @@ public class InimigoLados : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+
 
     }
 }

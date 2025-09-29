@@ -32,6 +32,10 @@ public class InimigoM1ovimento : MonoBehaviour
             
 
         }
+        if (collision.gameObject.CompareTag("Parede"))
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -66,7 +66,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (temporizadorLados >= tempoSpawnLados)
         {
-            Debug.Log("To chamando isso aqui");
+            
             Instantiate(InimigoLados, new Vector2(9.42f, Random.Range(4.51f, -4.51f)), Quaternion.identity);
             
             temporizadorLados = 0;
